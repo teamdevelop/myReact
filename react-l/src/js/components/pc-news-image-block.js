@@ -18,8 +18,10 @@ export default class PCNewBlock extends React.Component{
     }
 
     render(){
-        //图片新闻模块样式
-        //图片样式
+        // // styleImage = '';
+        // // styleH3 = '';
+        // //图片新闻模块样式
+        // //图片样式
         const styleImage = {
 			display: "block",
 			width: this.props.imageWidth,

@@ -8,8 +8,7 @@ export default class PCNewsContainer extends React.Component{
     constructor(){
         super();
         this.state={
-            news: '',
-            newsList: ''
+            news: ''
         }
     }
 
