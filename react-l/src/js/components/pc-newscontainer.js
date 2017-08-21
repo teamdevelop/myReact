@@ -16,25 +16,11 @@ export default class PCNewsContainer extends React.Component{
         let myFetchOptions = {
             method:'GET'
         };
-        fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type=guoji&count=4", myFetchOptions)
+        fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type=top&count=4", myFetchOptions)
         .then(response => response.json()).then(json => this.setState({news: json}));
     }
 
-
-
     render(){
-        const leftContainer = {
-            width:'400px',
-            float: 'left'
-        };
-        const carousel = {
-            width:'400px',
-            float: 'left'
-        };
-        const carousel_img = {
-            width:'400px',
-            height: '260px'
-        };
         const settings = {
             dots: true,
             infinite: true,
@@ -46,21 +32,21 @@ export default class PCNewsContainer extends React.Component{
         const newsList = news.length
         ? news.map((newsItem, index) => (
             <div key={index}>
-                <img src={newsItem.thumbnail_pic_s} style={carousel_img}/>
+                <img src={newsItem.thumbnail_pic_s} />
             </div>
         ))
         : <div>'没有加载到任何新闻'</div> ;
         return(
             <Row>
                 <Col span={2}/>
-                <Col span={20}>
-                    <div style={leftContainer}>
-                        <div style={carousel}>
-                        <Carousel {...settings}>
-                            {newsList}
-                        </Carousel>
+                <Col span={20} class="container">
+                    <div class='leftContainer'>
+                        <div class='carousel'>
+                            <Carousel {...settings}>
+                                {newsList}
+                            </Carousel>
                         </div>
-                        <PCNewsImageBlock count={6} type="guoji" width="400px" cartTitle="国际头条" imageWidth="112px"/>
+                        <PCNewsImageBlock count={6} type="yule" width="400px" cartTitle="娱乐头条" imageWidth="112px"/>
                     </div>
 
                     <Tabs class="tabs_news" type="editable-card">
@@ -70,6 +56,9 @@ export default class PCNewsContainer extends React.Component{
                         <TabPane tab="国际" key="2">
                             <PCNewsBlock count={22} type="guoji" width="100%" bordered="false" />
                         </TabPane>
+                        <TabPane tab="国内" key="3">
+                        <PCNewsBlock count={22} type="guonei" width="100%" bordered="false" />
+                    </TabPane>
                     </Tabs>
                 </Col>
                 <Col span={2}/>
