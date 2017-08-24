@@ -21,10 +21,10 @@ export default class PCNewBlock extends React.Component{
         const {news} = this.state;
 		const newsList = news.length
 			? news.map((newsItem, index) => (
-				<li key={index}>
-					<Link to={`details/${newsItem.uniquekey}`} target="_blank">
-						{newsItem.title}
-					</Link>
+                <li key={index}>
+                    <Link to={`detail/${newsItem.uniquekey}`} target="_blank">
+                        {newsItem.title}
+                    </Link>
 				</li>
 			))
 			: <div>'没有加载到任何新闻'</div> ;

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Card} from 'antd';
-import {Router,Route,Link,browserHistory} from 'react-router';
+import {Link} from 'react-router';
 
 export default class PCNewBlock extends React.Component{
     constructor(){
@@ -38,7 +38,7 @@ export default class PCNewBlock extends React.Component{
 		const newsList = news.length
 			? news.map((newsItem, index) => (
 				<div key={index} class="imageblock">
-                    <Link to={`details/${newsItem.uniquekey}`} target="_blank">
+                    <Link to={`detail/${newsItem.uniquekey}`} target="_blank">
                         <div class="custom-image">
                             <img alt="" style={styleImage} src={newsItem.thumbnail_pic_s}/>
                         </div>
