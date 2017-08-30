@@ -2,6 +2,7 @@ import React from 'react';
 import {Button,Icon,Form,Modal,Tabs,Row,Col,Carousel} from 'antd';
 import PCNewsBlock from './pc-news-block';
 import PCNewsImageBlock from './pc-news-image-block';
+import PCNewsCopy from './pc-newscopy';
 const TabPane = Tabs.TabPane;
 
 export default class PCNewsContainer extends React.Component{
@@ -59,6 +60,11 @@ export default class PCNewsContainer extends React.Component{
                         <TabPane tab="国内" key="3">
                         <PCNewsBlock count={22} type="guonei" width="100%" bordered="false" />
                     </TabPane>
+                    </Tabs>
+                    <Tabs class='tabs_product'>
+                        <TabPane tab='抄袭的新闻' key='1'>
+                            <PCNewsCopy/>
+                        </TabPane>
                     </Tabs>
                 </Col>
                 <Col span={2}/>

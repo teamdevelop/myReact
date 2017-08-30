@@ -2,6 +2,7 @@ import React from 'react';
 import {Row,Col,BackTop} from 'antd';
 import MobileHeader from './mobile-header';
 import MobileFooter from './mobile-footer';
+import CommonComments from './common-comments';
 
 export default class MobileNewsDetail extends React.Component{
     constructor(){
@@ -34,6 +35,8 @@ export default class MobileNewsDetail extends React.Component{
                     {/*<div  class='articleContainer'>
                         {this.state.newsItem.pagecontent}
                     </div>*/}
+                    <hr/>
+                    <CommonComments uniquekey={this.props.params.uniquekey}/>
                 </Col>
             </Row>
             <MobileFooter/>
